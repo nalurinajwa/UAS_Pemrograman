@@ -1,1 +1,104 @@
-hi
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Seru & Receh - BrainTease</title>
+    <meta name="description"
+        content="Website quiz kreatif dengan tema tebak-tebakan receh, cerdas, dan menghibur. Tersedia dalam Bahasa Indonesia, Inggris, dan Jepang.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button id="soundToggle" class="sound-toggle" aria-label="Toggle Sound">
+        <span id="soundIcon">🔊</span>
+    </button>
+
+    <main id="app">
+        <!-- Home Screen -->
+        <section id="homeScreen" class="glass-card fade-in">
+            <h1 id="title">BrainTease Quiz</h1>
+            <p id="description">Tantang otakmu dengan quiz cerdas, lucu, dan sedikit 'receh' untuk mengisi waktu
+                luangmu!</p>
+
+            <div class="selection-grid">
+                <div class="selection-item">
+                    <label for="langSelect" id="labelLang">Pilih Bahasa</label>
+                    <select id="langSelect">
+                        <option value="id" selected>Bahasa Indonesia</option>
+                        <option value="en">English</option>
+                        <option value="jp">日本語</option>
+                    </select>
+                </div>
+                <div class="selection-item">
+                    <label for="themeSelect" id="labelTheme">Tema Quiz</label>
+                    <select id="themeSelect">
+                        <option value="receh" selected>Tebak-tebakan Receh</option>
+                        <option value="logic">Logika Unik</option>
+                        <option value="knowledge">Pengetahuan Umum</option>
+                    </select>
+                </div>
+                <div class="selection-item">
+                    <label for="difficultySelect" id="labelDifficulty">Kesulitan</label>
+                    <select id="difficultySelect">
+                        <option value="easy">Mudah (Santuy)</option>
+                        <option value="medium">Sedang (Cerdas)</option>
+                        <option value="hard">Sulit (Pro)</option>
+                    </select>
+                </div>
+                <div class="selection-item">
+                    <label for="countSelect" id="labelCount">Jumlah Soal</label>
+                    <select id="countSelect">
+                        <option value="5">5 Soal</option>
+                        <option value="10" selected>10 Soal</option>
+                        <option value="15">15 Soal</option>
+                    </select>
+                </div>
+            </div>
+
+            <button id="startBtn" class="btn btn-primary">Mulai Sekarang!</button>
+        </section>
+
+        <!-- Quiz Screen -->
+        <section id="quizScreen" class="glass-card hidden">
+            <div class="quiz-header">
+                <div class="stats-badge"><span id="qCount">1</span> / <span id="totalQ">10</span></div>
+                <div id="timer" class="stats-badge">00:30</div>
+                <div class="stats-badge">Skor: <span id="score">0</span></div>
+            </div>
+
+            <div class="progress-container">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+
+            <div id="qContainer" class="fade-in">
+                <img id="qImage" src="" alt="Quiz Image" class="question-img hidden">
+                <h2 id="qText" class="question-text">Memuat pertanyaan...</h2>
+                <div id="options" class="options-grid">
+                    <!-- Options buttons will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Result Screen -->
+        <section id="resultScreen" class="glass-card hidden">
+            <h1 id="resultTitle">Hasil Quiz!</h1>
+            <div id="scoreDisplay" class="result-score">0</div>
+            <p id="resultMsg" class="result-msg">Wah, kamu hebat banget!</p>
+
+            <div id="resultStats" style="text-align: center; margin-bottom: 2rem;">
+                <p><span id="correctAnswers">0</span> Benar dari <span id="summaryTotal">10</span> Soal</p>
+            </div>
+
+            <div style="display: flex; gap: 1rem;">
+                <button id="restartBtn" class="btn btn-primary">Main Lagi</button>
+                <button id="homeBtn" class="btn btn-secondary">Beranda</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
